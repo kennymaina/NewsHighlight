@@ -1,0 +1,17 @@
+{% macro displayNewsList(news_list) %}
+
+
+    {% for general in news_list %}
+    <div class="col-md-6">
+
+            <p>{{general.name}}</p>
+        <li>{{ general.description}}</li>
+        
+    
+        <a href="/articles/{{general.id}}" button type="button" class="btn btn-info ">view</a></button>
+
+    </div>
+
+
+    {% endfor %}
+{% endmacro %}
