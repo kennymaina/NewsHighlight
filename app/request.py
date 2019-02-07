@@ -71,21 +71,21 @@ def get_articles(id):
 
     return article_results
 
-# def process_article_results(articles_list):
-#     articles_results=[]
-#     for article_item in articles_list:
-#         id=article_item.get('id')
-#         name=article_item.get('name')
-#         author=article_item.get('author')
-#         title=article_item.get('title')
-        description=article_item.get('description')
-        url=article_item.get('url')
-        urlToImage=article_item.get('urlToImage')
-        publishedAt=article_item.get('publishedAt')
+def process_article_results(articles_list):
+    articles_results=[]
+    for article_item in articles_list:
+        id=article_item.get('id')
+        name=article_item.get('name')
+        author=article_item.get('author')
+        title=article_item.get('title')
+    #     description=article_item.get('description')
+    #     url=article_item.get('url')
+    #     urlToImage=article_item.get('urlToImage')
+    #     publishedAt=article_item.get('publishedAt')
 
-        if urlToImage:
-            articles_object = Article(id,name,author,title,description,publishedAt,url,urlToImage)
-            articles_results.append(articles_object)
+    #     if urlToImage:
+    #         articles_object = Article(id,name,author,title,description,publishedAt,url,urlToImage)
+    #         articles_results.append(articles_object)
 
-    return articles_results
+    # return articles_results
 
