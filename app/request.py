@@ -5,33 +5,33 @@ from .models import Source,Article
 
 apiKey = None
 
-# #Getting the news base url
-# base_url = None
-# article_base_url = None
+#Getting the news base url
+base_url = None
+article_base_url = None
 
-# def configure_request(app):
-#     global apiKey,base_url
-#     apiKey = app.config['NEWSHIGHLIGHT_API_KEY']
-#     base_url = app.config["NEWSHIGHLIGHT_API_BASE_URL"]
-#     # article_base_url = app.config["NEWSHIGHLIGHT_ARTICLE_API_BASE_URL"]
+def configure_request(app):
+    global apiKey,base_url
+    apiKey = app.config['NEWSHIGHLIGHT_API_KEY']
+    base_url = app.config["NEWSHIGHLIGHT_API_BASE_URL"]
+    # article_base_url = app.config["NEWSHIGHLIGHT_ARTICLE_API_BASE_URL"]
 
-def get_sources(category):
-    """
-    Function that gets the json response to our url request
-    """
-    get_sources_url = base_url.format(category,apiKey)
+# def get_sources(category):
+#     """
+#     Function that gets the json response to our url request
+#     """
+#     get_sources_url = base_url.format(category,apiKey)
 
-    with urllib.request.urlopen(get_sources_url) as url:
-        get_sources_data = url.read()
-        get_sources_response = json.loads(get_sources_data)
+#     with urllib.request.urlopen(get_sources_url) as url:
+#         get_sources_data = url.read()
+#         get_sources_response = json.loads(get_sources_data)
 
-        source_results= None
+#         source_results= None
 
-        if get_sources_response["sources"]:
-            source_results_list = get_sources_response['sources']
-            source_results = process_results(source_results_list)
+#         if get_sources_response["sources"]:
+#             source_results_list = get_sources_response['sources']
+#             source_results = process_results(source_results_list)
 
-    return source_results
+#     return source_results
 
 def process_results(source_list):
     """
