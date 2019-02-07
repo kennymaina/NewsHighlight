@@ -33,19 +33,19 @@ def get_sources(category):
 
     return source_results
 
-# def process_results(source_list):
-#     """
-#     Function that processes the source result and transform them into a list of objects
-#     Args:
-#     source_list: A list of dictionaries that contain movie details
-#     Returns:
-#     source_results: A list of Source objects
-#     """
-#     source_results=[]
-#     for source_item in source_list:
-#         id = source_item.get("id")
-#         name = source_item.get("name")
-#         description = source_item.get("description")
+def process_results(source_list):
+    """
+    Function that processes the source result and transform them into a list of objects
+    Args:
+    source_list: A list of dictionaries that contain movie details
+    Returns:
+    source_results: A list of Source objects
+    """
+    source_results=[]
+    for source_item in source_list:
+        id = source_item.get("id")
+        name = source_item.get("name")
+        description = source_item.get("description")
        
        
 
@@ -55,21 +55,21 @@ def get_sources(category):
 
     return source_results
 
-def get_articles(id):
-    '''Function thet gets the json response to our url request'''
-    get_articles_url = article_base_url.format(id,apiKey)
+# def get_articles(id):
+#     '''Function thet gets the json response to our url request'''
+#     get_articles_url = article_base_url.format(id,apiKey)
 
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response = json.loads(get_articles_data)
+#     with urllib.request.urlopen(get_articles_url) as url:
+#         get_articles_data = url.read()
+#         get_articles_response = json.loads(get_articles_data)
 
-        article_results = None
+#         article_results = None
 
-        if get_articles_response['articles']:
-            article_results_list = get_articles_response['articles']
-            article_results = process_article_results(article_results_list)
+#         if get_articles_response['articles']:
+#             article_results_list = get_articles_response['articles']
+#             article_results = process_article_results(article_results_list)
 
-    return article_results
+#     return article_results
 
 def process_article_results(articles_list):
     articles_results=[]
